@@ -16,6 +16,8 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+var calculado=false;
+
 var app = {
     // Application Constructor
     initialize: function() {
@@ -28,6 +30,8 @@ var app = {
     // 'pause', 'resume', etc.
     onDeviceReady: function() {
         this.receivedEvent('deviceready');
+        document.getElementById("boton").addEventListener("click", calcular, false);
+        document.getElementById("botonlimpiar").addEventListener("click", limpiar, false);
     },
 
     // Update DOM on a Received Event
@@ -41,6 +45,47 @@ var app = {
 
         console.log('Received Event: ' + id);
     }
-};
 
+    
+};
+function limpiar(){
+    document.getElementById('agente').innerHTML="Sumas: ";
+    document.getElementById('cheque').innerHTML="Valor de Cheque: ";
+    document.getElementById('iva').innerHTML="+ 13% IVA: ";
+    document.getElementById('retencion').innerHTML="- 1% Retención: ";
+    document.getElementById('total').innerHTML="Total: ";
+    document.getElementById('valorconiva').innerHTML="Subtotal: ";
+    document.getElementById('valor').value="";
+}
+function calcular(){
+    if(document.getElementById('valor').value!=""){
+        
+    if(calculado){
+    document.getElementById('agente').innerHTML="Sumas: ";
+    document.getElementById('cheque').innerHTML="Valor de Cheque: ";
+    document.getElementById('iva').innerHTML="+ 13% IVA: ";
+    document.getElementById('retencion').innerHTML="- 1% Retención: ";
+    document.getElementById('total').innerHTML="Total: ";
+    document.getElementById('valorconiva').innerHTML="Subtotal: ";
+    }
+    var agente= parseFloat(document.getElementById('valor').value);
+    var iva = parseFloat((agente*0.13).toFixed(2));
+    var valorconiva = parseFloat((agente+iva).toFixed(2));
+    var retencion = parseFloat((agente*0.01).toFixed(2));
+    var total = parseFloat((agente+iva-retencion).toFixed(2));
+    var renta = parseFloat((agente*0.1).toFixed(2));
+    var cheque = parseFloat((total- renta).toFixed(2));
+    document.getElementById('agente').innerHTML+= agente.toString();
+    document.getElementById('cheque').innerHTML+=cheque.toString();
+    document.getElementById('iva').innerHTML+=iva.toString();
+    document.getElementById('retencion').innerHTML+=retencion.toString();
+    // document.getElementById('renta').value=renta.toString();
+    document.getElementById('total').innerHTML+=total.toString();
+    document.getElementById('valorconiva').innerHTML+=valorconiva.toString();
+    calculado=true;
+    
+}else{
+    limpiar();
+}
+}
 app.initialize();

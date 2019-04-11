@@ -32,39 +32,46 @@
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
-        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <!-- <link rel="stylesheet" type="text/css" href="css/index.css"> -->
+        <link rel="stylesheet" type="text/css" href="css/materialize.min.css">
         <title>Calculadora</title>
     </head>
     <body>
         <div class="app">
-            <h1>Calculadora</h1>
-            <div id="deviceready" class="blink">
+             
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">  Calculadora</a>
+    </div>
+  </nav>
+  <div class="container col s12">    
+            <div id="deviceready" class="blink" style="display:none">
                 <p class="event listening">Conectando con dispositivo</p>
                 <p class="event received">Dispositivo está listo</p>
             </div>
-            <input id="test" type="text" value="hola"/>
-            <button onClick="calcular()">Prueba</button>
+            <input id="valor" type="number" value="" placeholder="Ingrese el valor del agente de retención"/>
+            <div style="text-align:center">
+            <button id="boton" class="waves-effect waves-light btn">Calcular</button>
+            <button id="botonlimpiar" class="waves-effect waves-light btn">Limpiar</button>
+            </div>
+            <ul class="collection">
+                <li class="collection-item" id='cheque'>Valor de Cheque: </li>
+                <hr>
+                <li class="collection-item" id='agente'>Sumas: </li>
+                <li class="collection-item" id='iva'>+ 13% IVA: </li>
+                <hr>
+                <li class="collection-item" id="valorconiva">Subtotal: </li>
+                <li class="collection-item" id="retencion">- 1% Retención: </li>
+                <hr>
+                <li class="collection-item" id='total'>Total: </li>
+              </ul>
+
         </div>
+    </div>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
-        <script>
-        function calcular(){
-            var agente= parseFloat(document.getElementById('test').value)
-            var iva = parseFloat((agente*0.13).toFixed(2))
-            var valorconiva = parseFloat((agente+iva).toFixed(2))
-            var retencion = parseFloat((agente*0.01).toFixed(2))
-            var total = parseFloat((agente+iva-retencion).toFixed(2))
-            var renta = parseFloat((agente*0.1).toFixed(2))
-            var cheque = parseFloat((total- renta).toFixed(2))
+        <script type="text/javascript" src="js/materialize.min.js"></script>
 
-            document.write("Cheque:" + cheque + "<br> <hr>");
-            document.write("Agente de Retención:" + agente + "<br>");
-            document.write("+ IVA:" + iva + "<br>");
-            document.write("Valor con IVA:" + valorconiva + "<br>");
-            document.write("- Retención del 1%:" + retencion + "<br>");
-            document.write("Total:" + total + "<br>");
-        }
-        </script>
 
     </body>
 </html>
