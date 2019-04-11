@@ -77,6 +77,11 @@ function calcular(){
     var total = agente+iva-retencion;
     var renta = agente*0.1;
     var cheque = total- renta;
+    if(agente<100){
+        renta=0
+        total=valorconiva
+        retencion=0
+    }
     document.getElementById('agente').innerHTML+= agente.toFixed(2).toString();
     document.getElementById('cheque').innerHTML+=cheque.toFixed(2).toString();
     document.getElementById('iva').innerHTML+=iva.toFixed(2).toString();
