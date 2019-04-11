@@ -1,0 +1,15 @@
+directories:
+  output: 'C:\wamp64\www\Development\CalculadoraCredito\calculadora\platforms\electron\build'
+  buildResources: 'C:\wamp64\www\Development\CalculadoraCredito\calculadora\platforms\electron\build-res'
+  app: 'C:\wamp64\www\Development\CalculadoraCredito\calculadora\platforms\electron\www'
+appId: com.suyanet.calculadora
+productName: Calculadora
+electronVersion: 4.0.1
+electronDownload:
+  version: 4.0.1
+win:
+  icon: installer.png
+  target:
+    - target: nsis
+      arch:
+        - x64

@@ -1,0 +1,18 @@
+{
+  "background_color": "#FFF",
+  "display": "standalone",
+  "orientation": "any",
+  "start_url": "index.html",
+  "name": "Calculadora",
+  "short_name": "Calculadora",
+  "version": "com.suyanet.calculadora",
+  "description": "Calculadora Crédito Fiscal",
+  "author": "Christopher Fuentes",
+  "icons": [
+    {
+      "src": "www/img/logo.png",
+      "type": "image/png",
+      "sizes": "undefinedxundefined"
+    }
+  ]
+}

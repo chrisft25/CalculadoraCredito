@@ -11,7 +11,7 @@
         Christopher Fuentes
     </author>
     <icon src="www/img/logo.png" />
-    <content src="prueba.html" />
+    <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />

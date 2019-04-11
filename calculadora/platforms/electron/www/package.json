@@ -1,0 +1,10 @@
+{
+  "main": "cdv-electron-main.js",
+  "name": "com.suyanet.calculadora",
+  "displayName": "Calculadora",
+  "version": "1.0.0",
+  "description": "Calculadora Crédito Fiscal",
+  "homepage": "https://chrisfuentes.me",
+  "license": "Apache-2.0",
+  "author": "Christopher Fuentes"
+}

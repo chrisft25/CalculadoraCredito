@@ -37,7 +37,7 @@
         <link rel="stylesheet" type="text/css" href="css/jquery.dataTables.min.css">
         <title>Calculadora</title>
     </head>
-    <body>
+    <body id="bodyinicial">
         <div class="app">
              
   <nav>
@@ -46,14 +46,14 @@
     </div>
   </nav>
   
-  <div class="container col s12">    
+  <div id="forminicial" class="container col s12">    
             <div id="deviceready" class="blink" style="display:none">
                 <p class="event listening">Conectando con dispositivo</p>
                 <p class="event received">Dispositivo está listo</p>
             </div>
             <input id="valor" type="number" value="" placeholder="Ingrese el valor del agente de retención"/>
             <div style="text-align:center">
-            <button id="boton" class="waves-effect waves-light btn">Calcular</button>
+            <button id="boton" type="submit" class="waves-effect waves-light btn">Calcular</button>
             <button id="botonlimpiar" class="waves-effect waves-light btn">Limpiar</button>
             </div>
             <ul class="collection">
@@ -78,7 +78,7 @@
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript" src="js/materialize.min.js"></script>
-        <script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
+        <!-- <script type="text/javascript" src="js/jquery.dataTables.min.js"></script> -->
 
 
     </body>
