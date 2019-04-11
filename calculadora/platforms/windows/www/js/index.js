@@ -31,13 +31,9 @@ var app = {
     // 'pause', 'resume', etc.
     onDeviceReady: function() {
         this.receivedEvent('deviceready');
-        document.getElementById("boton").addEventListener("click", function(){window.localStorage.setItem("Prueba", "José")}, false);
-        // document.getElementById("botonlimpiar").addEventListener("click", limpiar, false);
-        $('#example').DataTable();
-        if(window.localStorage.getItem("Prueba")===null){
-            alert("Prueba")
-        }
-        document.getElementById('stor').value=window.localStorage.getItem("Prueba");
+        document.getElementById("boton").addEventListener("click", calcular, false);
+        document.getElementById("botonlimpiar").addEventListener("click", limpiar, false);
+ 
     },
 
     // Update DOM on a Received Event
@@ -75,19 +71,19 @@ function calcular(){
     document.getElementById('valorconiva').innerHTML="Subtotal: ";
     }
     var agente= parseFloat(document.getElementById('valor').value);
-    var iva = parseFloat((agente*0.13).toFixed(2));
-    var valorconiva = parseFloat((agente+iva).toFixed(2));
-    var retencion = parseFloat((agente*0.01).toFixed(2));
-    var total = parseFloat((agente+iva-retencion).toFixed(2));
-    var renta = parseFloat((agente*0.1).toFixed(2));
-    var cheque = parseFloat((total- renta).toFixed(2));
-    document.getElementById('agente').innerHTML+= agente.toString();
-    document.getElementById('cheque').innerHTML+=cheque.toString();
-    document.getElementById('iva').innerHTML+=iva.toString();
-    document.getElementById('retencion').innerHTML+=retencion.toString();
+    var iva = agente*0.13;
+    var valorconiva = agente+iva;
+    var retencion = agente*0.01;
+    var total = agente+iva-retencion;
+    var renta = agente*0.1;
+    var cheque = total- renta;
+    document.getElementById('agente').innerHTML+= agente.toFixed(2).toString();
+    document.getElementById('cheque').innerHTML+=cheque.toFixed(2).toString();
+    document.getElementById('iva').innerHTML+=iva.toFixed(2).toString();
+    document.getElementById('retencion').innerHTML+=retencion.toFixed(2).toString();
     // document.getElementById('renta').value=renta.toString();
-    document.getElementById('total').innerHTML+=total.toString();
-    document.getElementById('valorconiva').innerHTML+=valorconiva.toString();
+    document.getElementById('total').innerHTML+=total.toFixed(2).toString();
+    document.getElementById('valorconiva').innerHTML+=valorconiva.toFixed(2).toString();
     calculado=true;
     
 }else{
