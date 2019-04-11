@@ -19,6 +19,9 @@
         <param name="ios-package" value="CDVGestureHandler" />
         <param name="onload" value="true" />
     </feature>
+    <feature name="Geolocation">
+        <param name="ios-package" value="CDVLocation" />
+    </feature>
     <name>Calculadora</name>
     <description>
         Calculadora Crédito Fiscal
@@ -27,7 +30,7 @@
         Christopher Fuentes
     </author>
     <icon src="www/img/logo.png" />
-    <content src="index.html" />
+    <content src="prueba.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />

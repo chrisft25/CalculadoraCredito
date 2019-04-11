@@ -22,6 +22,7 @@ var app = {
     // Application Constructor
     initialize: function() {
         document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
+        
     },
 
     // deviceready Event Handler
@@ -30,8 +31,13 @@ var app = {
     // 'pause', 'resume', etc.
     onDeviceReady: function() {
         this.receivedEvent('deviceready');
-        document.getElementById("boton").addEventListener("click", calcular, false);
-        document.getElementById("botonlimpiar").addEventListener("click", limpiar, false);
+        document.getElementById("boton").addEventListener("click", function(){window.localStorage.setItem("Prueba", "José")}, false);
+        // document.getElementById("botonlimpiar").addEventListener("click", limpiar, false);
+        $('#example').DataTable();
+        if(window.localStorage.getItem("Prueba")===null){
+            alert("Prueba")
+        }
+        document.getElementById('stor').value=window.localStorage.getItem("Prueba");
     },
 
     // Update DOM on a Received Event
@@ -88,4 +94,16 @@ function calcular(){
     limpiar();
 }
 }
+// var onSuccess = function(position) {
+//     document.getElementById('coords').value="Latitud: " + position.coords.latitude + " Longitud:" + position.coords.longitude;
+// };
+
+// // onError Callback receives a PositionError object
+// //
+// function onError(error) {
+//     alert('code: '    + error.code    + '\n' +
+//           'message: ' + error.message + '\n');
+// }
+
+// navigator.geolocation.getCurrentPosition(onSuccess, onError);
 app.initialize();

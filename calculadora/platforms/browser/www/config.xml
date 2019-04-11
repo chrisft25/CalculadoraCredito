@@ -8,7 +8,7 @@
         Christopher Fuentes
     </author>
     <icon src="www/img/logo.png" />
-    <content src="index.html" />
+    <content src="prueba.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />

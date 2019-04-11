@@ -4,6 +4,9 @@
         <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
         <param name="onload" value="true" />
     </feature>
+    <feature name="Geolocation">
+        <param name="android-package" value="org.apache.cordova.geolocation.Geolocation" />
+    </feature>
     <name>Calculadora</name>
     <description>
         Calculadora Crédito Fiscal
@@ -12,7 +15,7 @@
         Christopher Fuentes
     </author>
     <icon src="www/img/logo.png" />
-    <content src="index.html" />
+    <content src="prueba.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />

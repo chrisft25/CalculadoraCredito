@@ -1,0 +1,1 @@
+﻿window.setTimeout(()=>{window.open("index.html");},3000)
